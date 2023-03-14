@@ -1,35 +1,47 @@
 /* eslint-disable no-unused-vars */
-let div
-let h2
-let p
+export const templateInfo = () => {
+    const div = document.createElement('div')
+    const h3 = document.createElement('h3')
+    const p = document.createElement('p')
 
-const templateInfo = (divContent) => {
-    div = document.createElement('div')
-    divContent.appendChild(div)
-
-    h2 = document.createElement('h2')
-    p = document.createElement('p')
-
-    div.appendChild(h2)
+    div.appendChild(h3)
     div.appendChild(p)
+
+    return { div, h3, p }
 }
 
-const description = (d) => {
-    templateInfo(d)
-    h2.textContent = 'Description'
-    p.textContent = 'This amazing coffee bla bla bla'
+const coffeeName = document.createElement('h1')
+coffeeName.textContent = 'CoffeeArt'
+
+const description = templateInfo()
+description.div.classList.add('description')
+description.h3.textContent = 'Description'
+description.p.textContent = 'This amazing coffee bla bla bla'
+
+const hour = templateInfo()
+hour.div.classList.add('hour')
+hour.h3.textContent = 'Hour'
+hour.p.setAttribute('style', 'white-space: pre;')
+hour.p.textContent =
+    'Sunday 8 to 13 \nMonday 8 to 13\nTuesday 8 to 13\nWednesday 8 to 13\nThursday 8 to 13\nFriday 8 to 13\nSaturday 8 to 13'
+
+const divImg = () => {
+    const div = document.createElement('div')
+    return { div }
 }
 
-const hour = (d) => {
-    templateInfo(d)
-    h2.textContent = 'hour'
-    p.setAttribute('style', 'white-space: pre;')
-    p.textContent = 'Sunday 8 to 13 \nMonday 8 to 13\nTuesday 8 to 13'
+const coffeeMakerImage = divImg()
+coffeeMakerImage.div.classList.add('img-coffee-maker')
+
+const coffeeBookImage = divImg()
+coffeeBookImage.div.classList.add('img-coffee-book')
+
+const homePage = (main) => {
+    main.appendChild(coffeeName)
+    main.appendChild(description.div)
+    main.appendChild(coffeeMakerImage.div)
+    main.appendChild(coffeeBookImage.div)
+    main.appendChild(hour.div)
 }
 
-const homePage = (d) => {
-    description(d)
-    hour(d)
-}
-
-export { homePage }
+export default homePage
