@@ -1,14 +1,15 @@
 const button = (name) => {
     const btn = document.createElement('button')
+    btn.setAttribute('type', 'button')
     btn.textContent = name
     return { btn }
 }
 
-const header = (divContent) => {
-    const homeBtn = button('Home')
-    const contactBtn = button('Contact')
-    const menuBtn = button('Menu')
+const homeBtn = button('Home')
+const contactBtn = button('Contact')
+const menuBtn = button('Menu')
 
+const header = (divContent) => {
     const headerTag = document.createElement('header')
     divContent.appendChild(headerTag)
 
@@ -16,7 +17,13 @@ const header = (divContent) => {
     headerTag.appendChild(contactBtn.btn)
     headerTag.appendChild(menuBtn.btn)
 
+    homeBtn.btn.classList.add('home-btn')
+    contactBtn.btn.classList.add('contact-btn')
+    menuBtn.btn.classList.add('menu-btn')
+
     headerTag.classList.add('header')
+
+    return { homeBtn }
 }
 
 const footer = (divContent) => {
@@ -30,4 +37,4 @@ const footer = (divContent) => {
     footerTag.classList.add('footer')
 }
 
-export { header, footer }
+export { header, homeBtn, contactBtn, menuBtn, footer }

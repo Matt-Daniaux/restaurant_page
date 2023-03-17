@@ -14,6 +14,7 @@ const macchiato = menuTemplate('Macchiato', '4$')
 const chaiLatte = menuTemplate('Chai Latte', '4$')
 
 const divMenu = document.createElement('div')
+divMenu.classList.add('menu')
 divMenu.appendChild(coffee.p)
 divMenu.appendChild(expresso.p)
 divMenu.appendChild(americano.p)

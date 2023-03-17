@@ -1,5 +1,5 @@
 import homePage from './homePage'
-import { footer, header } from './headerFooter'
+import { footer, header, homeBtn, contactBtn, menuBtn } from './headerFooter'
 import contact from './contactPage'
 import menu from './menuPage'
 
@@ -15,14 +15,30 @@ divContent.setAttribute('id', 'content')
 const main = document.createElement('main')
 main.classList.add('main')
 
-// content
+// Change page feature
+function mainEmpty() {
+    while (main.hasChildNodes()) {
+        main.removeChild(main.firstChild)
+    }
+}
 
+// content
 header(divContent)
 divContent.appendChild(main)
+homePage(main)
 
-/* homePage(main) */
-/* contact(main) */
-menu(main)
+homeBtn.btn.addEventListener('click', () => {
+    mainEmpty()
+    homePage(main)
+})
+contactBtn.btn.addEventListener('click', () => {
+    mainEmpty()
+    contact(main)
+})
+menuBtn.btn.addEventListener('click', () => {
+    mainEmpty()
+    menu(main)
+})
 
 footer(divContent)
 
