@@ -15,8 +15,9 @@ coffeeName.textContent = 'CoffeeArt'
 
 const description = templateInfo()
 description.div.classList.add('description')
-description.h3.textContent = 'Description'
-description.p.textContent = 'This amazing coffee bla bla bla'
+description.h3.textContent = ''
+description.p.textContent =
+    'Come to our\nawesome coffee \nto enhance your creativity and\nto enjoy the best produce\nin the area.'
 
 const hour = templateInfo()
 hour.div.classList.add('hour')

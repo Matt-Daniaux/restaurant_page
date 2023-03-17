@@ -29,7 +29,7 @@ const header = (divContent) => {
 const footer = (divContent) => {
     const footerTag = document.createElement('footer')
     const h4 = document.createElement('h4')
-    h4.textContent = 'NameOfRestaurant'
+    h4.textContent = 'CoffeeArt'
 
     divContent.appendChild(footerTag)
     footerTag.appendChild(h4)

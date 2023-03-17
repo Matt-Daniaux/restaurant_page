@@ -7,6 +7,9 @@ const menuTemplate = (item, price) => {
     return { p }
 }
 
+const divImg1 = document.createElement('div')
+divImg1.classList.add('menu-img1')
+
 const coffee = menuTemplate('Coffee', '2$')
 const expresso = menuTemplate('Expresso', '2.50$')
 const americano = menuTemplate('Americano', '3$')
@@ -24,6 +27,7 @@ divMenu.appendChild(chaiLatte.p)
 const menu = (main) => {
     main.appendChild(menuTitle)
     main.appendChild(divMenu)
+    main.appendChild(divImg1)
 }
 
 export default menu

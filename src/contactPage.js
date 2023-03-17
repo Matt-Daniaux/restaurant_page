@@ -4,6 +4,9 @@ pageTitle.textContent = 'Information'
 const div = document.createElement('div')
 div.classList.add('contact-info')
 
+const divImg = document.createElement('div')
+divImg.classList.add('contact-img')
+
 const template = (string) => {
     const p = document.createElement('p')
     p.classList.add('contact-info')
@@ -24,6 +27,7 @@ div.appendChild(email.p)
 const contact = (main) => {
     main.appendChild(pageTitle)
     main.appendChild(div)
+    main.appendChild(divImg)
 }
 
 export default contact
